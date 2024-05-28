@@ -1,1 +1,138 @@
-<h>History.</h>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axolotl Airlines Site</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="tab_logo.png">
+    <style>
+        body {
+            font-family: serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        #discord-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh; /* Height of viewport */
+            width: 300px; /* Width of orange background */
+            background-color: orange;
+            z-index: 1; /* Ensure orange container is above */
+        }
+
+        #button-container {
+            position: fixed;
+            top: 20px; /* Adjust the top position as needed */
+            right: 50px; /* Adjust the right position as needed */
+            z-index: 2; /* Ensure button is above orange container */
+        }
+
+        #discord-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #7289DA; /* Previous background color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #discord-button:hover {
+            background-color: #677bc4; /* Previous hover background color */
+        }
+
+        .custom-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #be18bd; /* New button background color */
+            color: #000; /* Black text color */
+            border: none;
+            border-radius: 5px;
+            width: 120px; /* New button width */
+            height: 50px; /* New button height */
+            padding: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            line-height: 50px;
+            text-align: center;
+            font-family: serif;
+        }
+
+        .custom-button:hover {
+            background-color: #9b1398; /* New hover background color */
+        }
+
+        #discord-logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        #join-text {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        #history-message {
+            position: fixed;
+            top: 30px; /* 30 pixels from the top */
+            right: 50px; /* Same right position as button container */
+            font-size: 34px;
+            color: black; /* Font color */
+        }
+
+        #history-image {
+            position: fixed;
+            top: 70px; /* 20 pixels down from the text */
+            right: 50px; /* Same right position as button container */
+        }
+
+        /* Additional Styles */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div id="discord-container">
+        <a href="https://discord.gg/hfcc5AcHZM" target="_blank" id="discord-button">
+            <img id="discord-logo" src="logo.png" alt="Discord Logo">
+            <span id="join-text">Join Our Discord!</span>
+        </a>
+    </div>
+    <div id="button-container">
+        <button class="custom-button" id="new-button">Reputation</button>
+    </div>
+
+    <div id="history-message">History</div>
+    <img id="history-image" src="history1.png" alt="History Image">
+
+    <!-- JavaScript to Add /reputation to Current URL -->
+    <script>
+        document.getElementById('discord-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            var currentURL = window.location.href;
+            var newURL = currentURL.endsWith('/') ? currentURL + 'reputation' : currentURL + '/reputation';
+            window.location.href = newURL;
+        });
+
+        document.getElementById('new-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            var currentURL = window.location.href;
+            var newURL = currentURL.endsWith('/') ? currentURL + 'reputation' : currentURL + '/reputation';
+            window.location.href = newURL;
+        });
+    </script>
+</body>
+</html>
