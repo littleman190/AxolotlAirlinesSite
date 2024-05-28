@@ -77,12 +77,6 @@
             margin-right: 10px;
         }
 
-        #join-text {
-            color: white;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
         #history-message {
             position: fixed;
             top: 30px; /* 30 pixels from the top */
@@ -91,10 +85,12 @@
             color: black; /* Font color */
         }
 
-        #history-image {
+        #history-video {
             position: fixed;
             top: 70px; /* 20 pixels down from the text */
             right: 50px; /* Same right position as button container */
+            width: 300px; /* Set video width */
+            height: auto; /* Maintain aspect ratio */
         }
 
         /* Additional Styles */
@@ -116,7 +112,10 @@
     </div>
 
     <div id="history-message">History</div>
-    <img id="history-image" src="history1.png" alt="History Image">
+    <video id="history-video" controls>
+        <source src="history1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <!-- JavaScript to Add /reputation to Current URL -->
     <script>
